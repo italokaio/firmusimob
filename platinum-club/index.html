@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Platinum Club — QI 3, Taguatinga Norte | Firmus Imobiliária</title>
+<meta name="description" content="Apartamento de 70m², 3 quartos (1 suíte), andar alto e vista livre no Residencial Platinum Club, QI 3, Taguatinga Norte. R$ 430.000, aceita financiamento e FGTS.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#211d18;
+    --cream:#f4efe6;
+    --gold:#a9803f;
+    --gold-deep:#7c5c28;
+    --line: rgba(33,29,24,0.14);
+    --card: #ffffff;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Inter', sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.55;
+  }
+  h1,h2,h3{ font-family:'Fraunces', serif; font-weight:600; line-height:1.1; }
+  img{max-width:100%; display:block;}
+  a{color:inherit; text-decoration:none;}
+
+  .wrap{ max-width:1080px; margin:0 auto; padding:0 24px; }
+
+  /* Top bar */
+  .topbar{
+    position:sticky; top:0; z-index:20;
+    background:rgba(244,239,230,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .topbar .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    padding-top:14px; padding-bottom:14px;
+  }
+  .brand{ font-family:'Fraunces', serif; font-weight:600; font-size:1.05rem; letter-spacing:0.01em; }
+  .brand span{ color:var(--gold-deep); }
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    background:var(--ink); color:var(--cream);
+    padding:11px 20px; border-radius:2px;
+    font-size:0.92rem; font-weight:500;
+    transition:background 0.2s ease;
+  }
+  .btn:hover{ background:var(--gold-deep); }
+  .btn.gold{ background:var(--gold); color:#fff; }
+  .btn.gold:hover{ background:var(--gold-deep); }
+
+  /* Hero */
+  .hero{
+    display:grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    min-height:86vh;
+  }
+  .hero-copy{
+    display:flex; flex-direction:column; justify-content:center;
+    padding:64px 56px;
+  }
+  .kicker{
+    font-size:0.85rem; color:var(--gold-deep); font-weight:500;
+    margin-bottom:18px;
+  }
+  .hero h1{
+    font-size:clamp(2.3rem, 4vw, 3.4rem);
+    max-width:11ch;
+  }
+  .hero p.lede{
+    margin-top:22px; font-size:1.08rem; max-width:42ch; color:#4a4438;
+  }
+  .hero-meta{
+    display:flex; gap:28px; margin-top:36px; flex-wrap:wrap;
+  }
+  .hero-meta div{ font-size:0.92rem; color:#4a4438; }
+  .hero-meta strong{ display:block; font-family:'Fraunces', serif; font-size:1.4rem; color:var(--ink); }
+  .hero-cta{ margin-top:40px; display:flex; gap:16px; flex-wrap:wrap; }
+
+  .hero-photo{
+    position:relative; overflow:hidden;
+    background:#000;
+  }
+  .hero-photo img{ width:100%; height:100%; object-fit:cover; }
+  .hero-photo .tag{
+    position:absolute; left:24px; bottom:24px;
+    background:rgba(33,29,24,0.72); color:#fff;
+    padding:8px 14px; font-size:0.82rem; border-radius:2px;
+  }
+
+  /* Specs strip */
+  .specs{
+    border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+    background:var(--card);
+  }
+  .specs .wrap{
+    display:grid; grid-template-columns:repeat(6,1fr);
+    padding:28px 24px;
+  }
+  .spec{ text-align:center; padding:0 8px; }
+  .spec + .spec{ border-left:1px solid var(--line); }
+  .spec strong{ display:block; font-family:'Fraunces', serif; font-size:1.6rem; }
+  .spec span{ font-size:0.8rem; color:#6b6355; }
+
+  /* Section heading */
+  .section{ padding:88px 0; }
+  .section-head{ max-width:56ch; margin-bottom:44px; }
+  .section-head .kicker{ margin-bottom:12px; }
+  .section-head h2{ font-size:clamp(1.7rem,2.6vw,2.3rem); }
+  .section-head p{ margin-top:14px; color:#4a4438; }
+
+  /* Gallery */
+  .gallery{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+  }
+  .gallery figure{ overflow:hidden; background:#000; border-radius:2px; }
+  .gallery img{ width:100%; height:280px; object-fit:cover; transition:transform 0.5s ease; }
+  .gallery a:hover img{ transform:scale(1.04); }
+  .gallery figcaption{
+    font-size:0.82rem; color:#6b6355; margin-top:8px;
+  }
+  .gallery .wide{ grid-column:span 2; }
+  .gallery .wide img{ height:280px; }
+
+  /* Two-column feature */
+  .split{
+    display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center;
+  }
+  .split img{ border-radius:2px; }
+  .feature-list{ list-style:none; margin-top:18px; }
+  .feature-list li{
+    padding:14px 0; border-bottom:1px solid var(--line);
+    display:flex; justify-content:space-between; gap:16px;
+    font-size:0.98rem;
+  }
+  .feature-list li span:first-child{ color:#4a4438; }
+  .feature-list li span:last-child{ font-weight:500; text-align:right; }
+
+  /* Lazer */
+  .amenities{
+    display:grid; grid-template-columns:repeat(5,1fr); gap:16px;
+  }
+  .amenity{
+    background:var(--card); border:1px solid var(--line);
+    padding:28px 18px; text-align:center; border-radius:2px;
+  }
+  .amenity .ic{ font-size:1.6rem; margin-bottom:12px; }
+  .amenity p{ font-size:0.92rem; }
+
+  /* Price band */
+  .price-band{
+    background:var(--ink); color:var(--cream);
+  }
+  .price-band .wrap{
+    display:grid; grid-template-columns:1.2fr 1fr; gap:40px;
+    padding:72px 24px; align-items:center;
+  }
+  .price-band h2{ color:#fff; font-size:clamp(1.7rem,2.6vw,2.2rem); }
+  .price-band p{ color:#cfc7b8; margin-top:14px; max-width:46ch; }
+  .price-card{
+    background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.16);
+    padding:36px; border-radius:2px;
+  }
+  .price-card .value{
+    font-family:'Fraunces', serif; font-size:2.4rem; color:#fff;
+  }
+  .price-card .cond{ font-size:0.92rem; color:#cfc7b8; margin-top:6px; }
+  .price-card .note{ font-size:0.85rem; color:#a89f8c; margin-top:16px; }
+  .price-card .btn{ width:100%; justify-content:center; margin-top:24px; }
+
+  /* Location */
+  .location .wrap{ display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:start; }
+  .location .fact{ display:flex; gap:16px; padding:16px 0; border-bottom:1px solid var(--line); }
+  .location .fact .dot{ color:var(--gold-deep); font-family:'Fraunces', serif; }
+
+  footer{
+    background:var(--ink); color:#a89f8c; text-align:center;
+    padding:36px 24px; font-size:0.85rem;
+  }
+  footer a{ color:var(--cream); }
+
+  /* Mobile */
+  @media (max-width:860px){
+    .hero{ grid-template-columns:1fr; }
+    .hero-photo{ height:52vh; order:-1; }
+    .hero-copy{ padding:44px 24px; }
+    .specs .wrap{ grid-template-columns:repeat(3,1fr); row-gap:20px; }
+    .spec:nth-child(4){ border-left:none; }
+    .gallery{ grid-template-columns:repeat(2,1fr); }
+    .gallery .wide{ grid-column:span 2; }
+    .split{ grid-template-columns:1fr; }
+    .amenities{ grid-template-columns:repeat(2,1fr); }
+    .price-band .wrap{ grid-template-columns:1fr; padding:56px 24px; }
+    .location .wrap{ grid-template-columns:1fr; gap:32px; }
+    .section{ padding:64px 0; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <div class="brand">Firmus <span>Imobiliária</span></div>
+    <a class="btn gold" href="https://wa.me/556184814437?text=Ol%C3%A1!%20Vim%20pela%20p%C3%A1gina%20do%20apartamento%20Platinum%20Club%20(QI%203%2C%20Taguatinga%20Norte)%20e%20quero%20agendar%20uma%20visita.">Falar no WhatsApp</a>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="hero-copy">
+    <div class="kicker">Taguatinga Norte · QI 3</div>
+    <h1>Residencial Platinum Club</h1>
+    <p class="lede">Andar alto, vista livre e planta ampla para 2 ambientes. Um apartamento desocupado e pronto para você entrar direto — sem obra e sem fila de espera.</p>
+    <div class="hero-meta">
+      <div><strong>70m²</strong>área útil</div>
+      <div><strong>3</strong>quartos, 1 suíte</div>
+      <div><strong>2</strong>banheiros</div>
+      <div><strong>1</strong>vaga coberta</div>
+    </div>
+    <div class="hero-cta">
+      <a class="btn gold" href="https://wa.me/556184814437?text=Ol%C3%A1!%20Vim%20pela%20p%C3%A1gina%20do%20apartamento%20Platinum%20Club%20(QI%203%2C%20Taguatinga%20Norte)%20e%20quero%20agendar%20uma%20visita.">Agendar visita</a>
+      <a class="btn" href="#fotos" style="background:transparent; color:var(--ink); border:1px solid var(--line);">Ver fotos</a>
+    </div>
+  </div>
+  <div class="hero-photo">
+    <img src="img/01-sala.jpg" alt="Sala ampla do apartamento Platinum Club, piso em madeira e lustre de cristal">
+    <div class="tag">Sala para 2 ambientes</div>
+  </div>
+</section>
+
+<section class="specs">
+  <div class="wrap">
+    <div class="spec"><strong>70m²</strong><span>área total</span></div>
+    <div class="spec"><strong>3</strong><span>quartos</span></div>
+    <div class="spec"><strong>1</strong><span>suíte</span></div>
+    <div class="spec"><strong>2</strong><span>banheiros</span></div>
+    <div class="spec"><strong>1</strong><span>vaga coberta</span></div>
+    <div class="spec"><strong>7</strong><span>anos de construído</span></div>
+  </div>
+</section>
+
+<section class="section" id="fotos">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">Galeria</div>
+      <h2>Cada ambiente, do jeito que está hoje</h2>
+      <p>Fotos reais do apartamento desocupado — sala, cozinha planejada, suíte e banheiros já reformados.</p>
+    </div>
+    <div class="gallery">
+      <figure class="wide"><a href="img/01-sala.jpg" target="_blank"><img src="img/01-sala.jpg" alt="Sala ampla com piso de madeira"></a><figcaption>Sala — vista da entrada</figcaption></figure>
+      <figure><a href="img/04-sala-2.jpg" target="_blank"><img src="img/04-sala-2.jpg" alt="Sala vista do corredor de entrada"></a><figcaption>Sala — vista da porta</figcaption></figure>
+      <figure><a href="img/02-cozinha.jpg" target="_blank"><img src="img/02-cozinha.jpg" alt="Cozinha planejada com revestimento em mármore e cooktop"></a><figcaption>Cozinha planejada</figcaption></figure>
+      <figure><a href="img/06-suite.jpg" target="_blank"><img src="img/06-suite.jpg" alt="Suíte com armários planejados"></a><figcaption>Suíte com armários</figcaption></figure>
+      <figure><a href="img/07-suite-banheiro.jpg" target="_blank"><img src="img/07-suite-banheiro.jpg" alt="Banheiro da suíte com cuba e box de vidro"></a><figcaption>Banheiro da suíte</figcaption></figure>
+      <figure class="wide"><a href="img/03-banheiro-social.jpg" target="_blank"><img src="img/03-banheiro-social.jpg" alt="Banheiro social com box de vidro"></a><figcaption>Banheiro social</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--card); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+  <div class="wrap split">
+    <img src="img/05-quarto.jpg" alt="Quarto com armário planejado e revestimento em mármore" loading="lazy">
+    <div>
+      <div class="kicker">Planta e acabamento</div>
+      <h2 style="font-size:clamp(1.7rem,2.6vw,2.2rem);">Armários já embutidos em todos os quartos</h2>
+      <ul class="feature-list">
+        <li><span>Sala</span><span>2 ambientes, piso laminado</span></li>
+        <li><span>Cozinha</span><span>Planejada, área de serviço integrada</span></li>
+        <li><span>Suíte</span><span>Armário planejado, banheiro privativo</span></li>
+        <li><span>Posição</span><span>Andar alto, vista livre</span></li>
+        <li><span>Situação</span><span>Desocupado, entrega imediata</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">Lazer do condomínio</div>
+      <h2>Estrutura completa sem sair do prédio</h2>
+    </div>
+    <div class="amenities">
+      <div class="amenity"><div class="ic">🏊</div><p>Piscina aquecida</p></div>
+      <div class="amenity"><div class="ic">🏋️</div><p>Academia</p></div>
+      <div class="amenity"><div class="ic">🎉</div><p>Salão de festas</p></div>
+      <div class="amenity"><div class="ic">♨️</div><p>Sauna</p></div>
+      <div class="amenity"><div class="ic">🎲</div><p>Sala de jogos</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="price-band">
+  <div class="wrap">
+    <div>
+      <div class="kicker" style="color:#cfc7b8;">Condições</div>
+      <h2>Aceita financiamento bancário e uso de FGTS</h2>
+      <p>Nossa equipe orienta toda a documentação, simulação de crédito e aprovação junto ao banco — do primeiro contato até as chaves.</p>
+    </div>
+    <div class="price-card">
+      <div class="value">R$ 430.000</div>
+      <div class="cond">Condomínio R$ 540 (com gás incluso)</div>
+      <div class="note">QI 3, Residencial Platinum Club — Taguatinga Norte</div>
+      <a class="btn gold" href="https://wa.me/556184814437?text=Ol%C3%A1!%20Tenho%20interesse%20no%20apartamento%20Platinum%20Club%20(QI%203%2C%20Taguatinga%20Norte)%20por%20R%24%20430.000%2C%20quero%20simular%20o%20financiamento.">Simular financiamento</a>
+    </div>
+  </div>
+</section>
+
+<section class="section location">
+  <div class="wrap">
+    <div>
+      <div class="kicker">Localização</div>
+      <h2 style="font-size:clamp(1.7rem,2.6vw,2.2rem);">QI 3, Taguatinga Norte</h2>
+      <p style="margin-top:14px; color:#4a4438; max-width:44ch;">No coração de Taguatinga Norte, com acesso rápido a comércio, escolas e vias principais do Distrito Federal.</p>
+    </div>
+    <div>
+      <div class="fact"><div class="dot">—</div><div>Andar alto com vista livre, sem prédios na frente</div></div>
+      <div class="fact"><div class="dot">—</div><div>1 vaga de garagem coberta e demarcada</div></div>
+      <div class="fact"><div class="dot">—</div><div>Ótimo condomínio, prédio com 7 anos de construído</div></div>
+      <div class="fact"><div class="dot">—</div><div>Imóvel desocupado — visita e mudança sem espera</div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div>Firmus Imobiliária · Corretor responsável Filipe Matheus Alves de Lima — CRECI-GO 43079</div>
+  <div style="margin-top:8px;"><a href="https://wa.me/556184814437">(61) 9 8481-4437</a> · <a href="https://firmusimob.com.br">firmusimob.com.br</a></div>
+</footer>
+
+</body>
+</html>
