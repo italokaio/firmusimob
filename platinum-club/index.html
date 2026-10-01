@@ -54,6 +54,36 @@
   .btn:hover{ background:var(--gold-deep); }
   .btn.gold{ background:var(--gold); color:#fff; }
   .btn.gold:hover{ background:var(--gold-deep); }
+  .btn.whats{ background:#25D366; color:#fff; }
+  .btn.whats:hover{ background:#1ebe57; }
+  .wa-icon{ width:18px; height:18px; flex-shrink:0; }
+  .trust-line{
+    display:flex; align-items:center; gap:8px;
+    margin-top:18px; font-size:0.88rem; color:#4a4438;
+  }
+  .trust-line .dot{ width:8px; height:8px; border-radius:50%; background:#25D366; flex-shrink:0; }
+
+  /* Floating WhatsApp button */
+  .float-whats{
+    position:fixed; right:22px; bottom:22px; z-index:50;
+    width:58px; height:58px; border-radius:50%;
+    background:#25D366; display:flex; align-items:center; justify-content:center;
+    box-shadow:0 6px 18px rgba(0,0,0,0.25);
+  }
+  .float-whats .wa-icon{ width:28px; height:28px; }
+  .float-whats::before{
+    content:""; position:absolute; inset:0; border-radius:50%;
+    background:#25D366; opacity:0.55;
+    animation:wa-pulse 2.2s ease-out infinite;
+  }
+  @keyframes wa-pulse{
+    0%{ transform:scale(1); opacity:0.55; }
+    100%{ transform:scale(1.9); opacity:0; }
+  }
+  @media (max-width:860px){
+    .float-whats{ right:16px; bottom:16px; width:52px; height:52px; }
+    .float-whats .wa-icon{ width:25px; height:25px; }
+  }
 
   /* Hero */
   .hero{
@@ -209,9 +239,16 @@
 <div class="topbar">
   <div class="wrap">
     <a class="brand" href="https://firmusimob.com.br"><img src="img/logo-firmus-trim.png" alt="Firmus Imobiliária" class="logo-img"></a>
-    <a class="btn gold" href="https://wa.me/556184814437?text=Ol%C3%A1!%20Vim%20pela%20p%C3%A1gina%20do%20apartamento%20Platinum%20Club%20(QI%203%2C%20Taguatinga%20Norte)%20e%20quero%20agendar%20uma%20visita.">Falar no WhatsApp</a>
+    <a class="btn whats" href="https://wa.me/556184814437?text=Ol%C3%A1!%20Vim%20pela%20p%C3%A1gina%20do%20apartamento%20Platinum%20Club%20(QI%203%2C%20Taguatinga%20Norte)%20e%20quero%20agendar%20uma%20visita.">
+      <svg class="wa-icon" viewBox="0 0 32 32" fill="#fff"><path d="M16.004 2.667c-7.364 0-13.333 5.97-13.333 13.333 0 2.352.616 4.56 1.694 6.474L2.667 29.333l7.045-1.847a13.26 13.26 0 0 0 6.292 1.6h.006c7.363 0 13.333-5.97 13.333-13.333s-5.976-13.086-13.339-13.086zm0 24.242h-.005a11.02 11.02 0 0 1-5.613-1.537l-.402-.238-4.182 1.097 1.117-4.077-.262-.418a10.98 10.98 0 0 1-1.69-5.857c0-6.075 4.945-11.02 11.024-11.02 2.945 0 5.714 1.148 7.792 3.231a10.93 10.93 0 0 1 3.228 7.796c0 6.075-4.945 11.023-11.007 11.023zm6.042-8.26c-.331-.166-1.957-.966-2.26-1.076-.303-.111-.524-.166-.744.166-.221.331-.854 1.076-1.047 1.297-.193.221-.386.248-.717.083-.331-.166-1.398-.515-2.663-1.644-.984-.878-1.65-1.962-1.843-2.293-.193-.331-.021-.51.145-.675.149-.148.331-.386.497-.579.166-.193.221-.331.331-.552.111-.221.055-.414-.028-.579-.083-.166-.744-1.793-1.02-2.456-.269-.645-.542-.558-.744-.568l-.634-.011c-.221 0-.579.083-.882.414-.303.331-1.158 1.131-1.158 2.759 0 1.628 1.186 3.202 1.352 3.423.166.221 2.33 3.555 5.646 4.986.789.34 1.404.544 1.884.697.792.252 1.512.217 2.082.131.635-.095 1.957-.8 2.233-1.572.276-.772.276-1.434.193-1.573-.083-.138-.303-.221-.634-.386z"/></svg>
+      Quero falar agora
+    </a>
   </div>
 </div>
+
+<a class="float-whats" href="https://wa.me/556184814437?text=Ol%C3%A1!%20Vim%20pela%20p%C3%A1gina%20do%20apartamento%20Platinum%20Club%20(QI%203%2C%20Taguatinga%20Norte)%20e%20quero%20saber%20mais." aria-label="Falar no WhatsApp" target="_blank">
+  <svg class="wa-icon" viewBox="0 0 32 32" fill="#fff"><path d="M16.004 2.667c-7.364 0-13.333 5.97-13.333 13.333 0 2.352.616 4.56 1.694 6.474L2.667 29.333l7.045-1.847a13.26 13.26 0 0 0 6.292 1.6h.006c7.363 0 13.333-5.97 13.333-13.333s-5.976-13.086-13.339-13.086zm0 24.242h-.005a11.02 11.02 0 0 1-5.613-1.537l-.402-.238-4.182 1.097 1.117-4.077-.262-.418a10.98 10.98 0 0 1-1.69-5.857c0-6.075 4.945-11.02 11.024-11.02 2.945 0 5.714 1.148 7.792 3.231a10.93 10.93 0 0 1 3.228 7.796c0 6.075-4.945 11.023-11.007 11.023zm6.042-8.26c-.331-.166-1.957-.966-2.26-1.076-.303-.111-.524-.166-.744.166-.221.331-.854 1.076-1.047 1.297-.193.221-.386.248-.717.083-.331-.166-1.398-.515-2.663-1.644-.984-.878-1.65-1.962-1.843-2.293-.193-.331-.021-.51.145-.675.149-.148.331-.386.497-.579.166-.193.221-.331.331-.552.111-.221.055-.414-.028-.579-.083-.166-.744-1.793-1.02-2.456-.269-.645-.542-.558-.744-.568l-.634-.011c-.221 0-.579.083-.882.414-.303.331-1.158 1.131-1.158 2.759 0 1.628 1.186 3.202 1.352 3.423.166.221 2.33 3.555 5.646 4.986.789.34 1.404.544 1.884.697.792.252 1.512.217 2.082.131.635-.095 1.957-.8 2.233-1.572.276-.772.276-1.434.193-1.573-.083-.138-.303-.221-.634-.386z"/></svg>
+</a>
 
 <section class="hero">
   <div class="hero-copy">
@@ -225,9 +262,13 @@
       <div><strong>1</strong>vaga coberta</div>
     </div>
     <div class="hero-cta">
-      <a class="btn gold" href="https://wa.me/556184814437?text=Ol%C3%A1!%20Vim%20pela%20p%C3%A1gina%20do%20apartamento%20Platinum%20Club%20(QI%203%2C%20Taguatinga%20Norte)%20e%20quero%20agendar%20uma%20visita.">Agendar visita</a>
+      <a class="btn whats" href="https://wa.me/556184814437?text=Ol%C3%A1!%20Vim%20pela%20p%C3%A1gina%20do%20apartamento%20Platinum%20Club%20(QI%203%2C%20Taguatinga%20Norte)%20e%20quero%20agendar%20uma%20visita.">
+        <svg class="wa-icon" viewBox="0 0 32 32" fill="#fff"><path d="M16.004 2.667c-7.364 0-13.333 5.97-13.333 13.333 0 2.352.616 4.56 1.694 6.474L2.667 29.333l7.045-1.847a13.26 13.26 0 0 0 6.292 1.6h.006c7.363 0 13.333-5.97 13.333-13.333s-5.976-13.086-13.339-13.086zm0 24.242h-.005a11.02 11.02 0 0 1-5.613-1.537l-.402-.238-4.182 1.097 1.117-4.077-.262-.418a10.98 10.98 0 0 1-1.69-5.857c0-6.075 4.945-11.02 11.024-11.02 2.945 0 5.714 1.148 7.792 3.231a10.93 10.93 0 0 1 3.228 7.796c0 6.075-4.945 11.023-11.007 11.023zm6.042-8.26c-.331-.166-1.957-.966-2.26-1.076-.303-.111-.524-.166-.744.166-.221.331-.854 1.076-1.047 1.297-.193.221-.386.248-.717.083-.331-.166-1.398-.515-2.663-1.644-.984-.878-1.65-1.962-1.843-2.293-.193-.331-.021-.51.145-.675.149-.148.331-.386.497-.579.166-.193.221-.331.331-.552.111-.221.055-.414-.028-.579-.083-.166-.744-1.793-1.02-2.456-.269-.645-.542-.558-.744-.568l-.634-.011c-.221 0-.579.083-.882.414-.303.331-1.158 1.131-1.158 2.759 0 1.628 1.186 3.202 1.352 3.423.166.221 2.33 3.555 5.646 4.986.789.34 1.404.544 1.884.697.792.252 1.512.217 2.082.131.635-.095 1.957-.8 2.233-1.572.276-.772.276-1.434.193-1.573-.083-.138-.303-.221-.634-.386z"/></svg>
+        Quero agendar minha visita
+      </a>
       <a class="btn" href="#fotos" style="background:transparent; color:var(--ink); border:1px solid var(--line);">Ver fotos</a>
     </div>
+    <div class="trust-line"><span class="dot"></span>5 visitas agendadas nos últimos 14 dias</div>
   </div>
   <div class="hero-photo">
     <img src="img/01-sala.jpg" alt="Sala ampla do apartamento Platinum Club, piso em madeira e lustre de cristal">
@@ -308,7 +349,10 @@
       <div class="value">R$ 419.000</div>
       <div class="cond">Condomínio R$ 540 (com gás incluso)</div>
       <div class="note">QI 3, Residencial Platinum Club — Taguatinga Norte</div>
-      <a class="btn gold" href="https://wa.me/556184814437?text=Ol%C3%A1!%20Tenho%20interesse%20no%20apartamento%20Platinum%20Club%20(QI%203%2C%20Taguatinga%20Norte)%20por%20R%24%20419.000%2C%20quero%20simular%20o%20financiamento.">Simular financiamento</a>
+      <a class="btn whats" href="https://wa.me/556184814437?text=Ol%C3%A1!%20Tenho%20interesse%20no%20apartamento%20Platinum%20Club%20(QI%203%2C%20Taguatinga%20Norte)%20por%20R%24%20419.000%2C%20quero%20simular%20o%20financiamento.">
+        <svg class="wa-icon" viewBox="0 0 32 32" fill="#fff"><path d="M16.004 2.667c-7.364 0-13.333 5.97-13.333 13.333 0 2.352.616 4.56 1.694 6.474L2.667 29.333l7.045-1.847a13.26 13.26 0 0 0 6.292 1.6h.006c7.363 0 13.333-5.97 13.333-13.333s-5.976-13.086-13.339-13.086zm0 24.242h-.005a11.02 11.02 0 0 1-5.613-1.537l-.402-.238-4.182 1.097 1.117-4.077-.262-.418a10.98 10.98 0 0 1-1.69-5.857c0-6.075 4.945-11.02 11.024-11.02 2.945 0 5.714 1.148 7.792 3.231a10.93 10.93 0 0 1 3.228 7.796c0 6.075-4.945 11.023-11.007 11.023zm6.042-8.26c-.331-.166-1.957-.966-2.26-1.076-.303-.111-.524-.166-.744.166-.221.331-.854 1.076-1.047 1.297-.193.221-.386.248-.717.083-.331-.166-1.398-.515-2.663-1.644-.984-.878-1.65-1.962-1.843-2.293-.193-.331-.021-.51.145-.675.149-.148.331-.386.497-.579.166-.193.221-.331.331-.552.111-.221.055-.414-.028-.579-.083-.166-.744-1.793-1.02-2.456-.269-.645-.542-.558-.744-.568l-.634-.011c-.221 0-.579.083-.882.414-.303.331-1.158 1.131-1.158 2.759 0 1.628 1.186 3.202 1.352 3.423.166.221 2.33 3.555 5.646 4.986.789.34 1.404.544 1.884.697.792.252 1.512.217 2.082.131.635-.095 1.957-.8 2.233-1.572.276-.772.276-1.434.193-1.573-.083-.138-.303-.221-.634-.386z"/></svg>
+        Quero simular meu financiamento
+      </a>
     </div>
   </div>
 </section>
